@@ -3,6 +3,7 @@
   box-sizing: border-box;
 }
 
+                                   /* Main body and header */
 body {
   font-family: sans-serif;
   background-color: #f9fbfd;
@@ -24,7 +25,8 @@ header {
   text-align: left;
 }
 
-/* Styling for password generation UI */
+                                      /* Styling for password generation UI */
+/* Styling for text area */ 
 .text-area {
   background-color: hsl(0, 0%, 100%);
   border-radius: 5px;
@@ -76,7 +78,7 @@ header {
   cursor: pointer;
 }
 
-/* Styling for text area */ 
+
 
 
 
