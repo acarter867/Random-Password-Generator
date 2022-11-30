@@ -1,3 +1,4 @@
+/* Global Styling */ 
 *,
 *::before,
 *::after {
@@ -42,14 +43,6 @@ header {
   padding: 30px 40px;
 }
 
-.text-area header::after {
-  content: " ";
-  display: block;
-  width: 100%;
-  background: #e7e9eb;
-  height: 2px;
-}
-
 .main-body{
   min-height: 100px;
    text-align: center;
@@ -60,7 +53,7 @@ header {
 }
 
 
-.text-area footer::before {
+footer::before {
   content: " ";
   display: block;
   width: 100%;
@@ -68,7 +61,7 @@ header {
   height: 2px;
 }
 
-.text-area footer::after {
+footer::after {
   content: " ";
   display: block;
   clear: both;
@@ -100,10 +93,6 @@ button {
 }
 
 #generate-password {
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  appearance: none;
-  border: none;
   display: block;
   width: 100%;
   padding-top: 15px;
@@ -119,6 +108,13 @@ button {
   resize: none;
   overflow: hidden;
 }
+
+.text-output{
+  border-top: 2px solid #f0f0f0;
+  border-bottom: 2px solid #f0f0f0;
+  color: #838383;
+}
+
 
 @media (max-width: 690px) {
   .btn {
