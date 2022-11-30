@@ -16,4 +16,4 @@ Please refer to the LICENSE file of this repository.
 <a href="https://acarter867.github.io/Random-Password-Generator/">Visit my Portfolio!</a>
 
 ## Preview:
-<img src="assets/pictures/acarter867.github.io_Random-Password-Generator_.png" alt="Password Generator Preview">
+<img src="/assets/photos/acarter867.github.io_Random-Password-Generator_.png" alt="Password Generator Preview">
