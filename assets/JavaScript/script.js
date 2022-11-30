@@ -6,9 +6,9 @@ var generateBtn = document.querySelector("#generate");
 const chars = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n',
     'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'];
 const numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 0];
-const specialCharacters = ['?', '!', '@', '#', '$', '"', '#', '%', '&', "'", '(', ')', '*', '+', ',', '-', '.', '/',
-':', ';', '<', '=', '>', '[', ']', '^', '_', '{', '}', '~'];
+const specialCharacters = ['?', '!', '@', '#', '$', '"'];
 
+// Default boolean options
 let lowerCase = false,
 upperCase = false,
 nums = false,
@@ -58,6 +58,7 @@ function getParams(){
     alert("ERROR, NO PARAMETERS HAVE BEEN SELECTED");
     getParams();
   }
+  // Return requested password length for password generation function
   return passLen;
 }
 
@@ -73,24 +74,27 @@ function generateArr(){
   return defaultArr;
 }
 
+// Generate password based on selected character options and requested length
 function generatePassword(passLength, combinedArr){
   let password = "";
   for(let i = 0; i < passLength; i++){
     let randomNumber = Math.floor(Math.random()*combinedArr.length);
     let currentChar = combinedArr[randomNumber];
-    console.log(currentChar);
 
+    // If either uppercase OR lowercase are selected, add alphabetic chars. Handle case sensitivity later
     if((lowerCase || upperCase) && chars.includes(currentChar)){
-      console.log(currentChar);
+      // If uppercase AND lowercase are selected, randomly choose chararacter to be capitalized. All chars are lowercase by default
       if(lowerCase && upperCase){
         let randomUpper = Math.floor(Math.random() * 2) + 1;
         if(randomUpper == 1){
           currentChar = currentChar.toUpperCase();
         }
+      // If only uppercase is selected, make all characters uppercase.
       }if(upperCase && !lowerCase){
         currentChar = currentChar.toUpperCase();
       }
     }
+    //only unhandled case is only lowercase, which is the default option. No need to handle explicitly.
     password += currentChar;
   }
   return password;
