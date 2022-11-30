@@ -1,7 +1,7 @@
 // Get references to the #generate element
 var generateBtn = document.querySelector("#generate");
 
-//declare character arrays
+// Declare character arrays
 
 const chars = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n',
     'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z'];
@@ -15,45 +15,45 @@ nums = false,
 specialChars = false;
 
 
-//prompt user for password length and character params
+// Prompt user for password length and character params
 function getParams(){
   //get users requested password length
   let passLen = prompt("How many characters would you like to include your password? *Must be between 8 and 128*");
-  //validate user input 
+  // Validate user input 
   while(passLen < 8 || passLen > 128 || isNaN(passLen)){
     passLen = prompt("ERROR: " + passLen + " is not accepted input. *Must be between 8 and 128*");
   }
 
-  //prompt to include lower-case letters
+  // Prompt to include lower-case letters
   let allowLower = prompt("Would you like to include lower-case letters? (Y/N)");
   while(allowLower.toLowerCase() != 'n' && allowLower.toLowerCase() != 'y'){
     allowLower = prompt('ERROR: ' + allowLower + ' is not accepted input. Would you like lower-case letters? (Y/N)');
   }
-  //if validated user response is 'y', change value of lowerCase to true
+  // If validated user response is 'y', change value of lowerCase to true
   lowerCase = (allowLower.toLowerCase() == 'y') ? true : false;
 
-  //prompt user to include upper-case letters
+  // Prompt user to include upper-case letters
   let allowUpper = prompt("Would you like to include upper-case letters? (Y/N)");
   while(allowUpper.toLowerCase() != 'n' && allowUpper.toLowerCase() != 'y'){
     allowUpper = prompt("ERROR: ${allowUpper} is not accepted input. Would you like upper-case letters? (Y/N)");
   }
   upperCase = (allowUpper.toLowerCase() == 'y') ? true : false;
 
-  //prompt user to include numbers
+  // Prompt user to include numbers
   let allowNums = prompt("Would you like to include numbers? (Y/N)");
   while(allowNums.toLowerCase() != 'n' && allowNums.toLowerCase() != 'y'){
     allowNums = prompt("ERROR: ${allowNums} is not accepted input. Would you like to include numbers? (Y/N)");
   }
   nums = (allowNums.toLowerCase() == 'y') ? true : false;
 
-  //prompt user to include special characters
+  // Prompt user to include special characters
   let allowSpecial = prompt("Would you like to include special characters? (Y/N)");
   while(allowSpecial.toLowerCase() != 'n' && allowSpecial.toLowerCase() != 'y'){
     allowSpecial = prompt("ERROR: ${allowSpecial} is not accepted input. Would you like to include special characters? (Y/N)");
   }
   specialChars = (allowSpecial.toLowerCase() == 'y') ? true : false;
 
-  //if no params are selected, inform user & call getParams again
+  // If no params are selected, inform user & call getParams again
   if(lowerCase == false && upperCase == false && nums == false && specialChars == false){
     alert("ERROR, NO PARAMETERS HAVE BEEN SELECTED");
     getParams();
@@ -62,6 +62,7 @@ function getParams(){
   return passLen;
 }
 
+// Concatenate arrays into single array containing all selected options.
 function generateArr(){
   defaultArr = [];
   if(lowerCase || upperCase){
