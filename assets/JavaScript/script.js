@@ -35,21 +35,21 @@ function getParams(){
   // Prompt user to include upper-case letters
   let allowUpper = prompt("Would you like to include upper-case letters? (Y/N)");
   while(allowUpper.toLowerCase() != 'n' && allowUpper.toLowerCase() != 'y'){
-    allowUpper = prompt("ERROR: ${allowUpper} is not accepted input. Would you like upper-case letters? (Y/N)");
+    allowUpper = prompt("ERROR: " + allowUpper + " is not accepted input. Would you like upper-case letters? (Y/N)");
   }
   upperCase = (allowUpper.toLowerCase() == 'y') ? true : false;
 
   // Prompt user to include numbers
   let allowNums = prompt("Would you like to include numbers? (Y/N)");
   while(allowNums.toLowerCase() != 'n' && allowNums.toLowerCase() != 'y'){
-    allowNums = prompt("ERROR: ${allowNums} is not accepted input. Would you like to include numbers? (Y/N)");
+    allowNums = prompt("ERROR: " + allowNums + " is not accepted input. Would you like to include numbers? (Y/N)");
   }
   nums = (allowNums.toLowerCase() == 'y') ? true : false;
 
   // Prompt user to include special characters
   let allowSpecial = prompt("Would you like to include special characters? (Y/N)");
   while(allowSpecial.toLowerCase() != 'n' && allowSpecial.toLowerCase() != 'y'){
-    allowSpecial = prompt("ERROR: ${allowSpecial} is not accepted input. Would you like to include special characters? (Y/N)");
+    allowSpecial = prompt("ERROR: " + allowSpecial + " is not accepted input. Would you like to include special characters? (Y/N)");
   }
   specialChars = (allowSpecial.toLowerCase() == 'y') ? true : false;
 

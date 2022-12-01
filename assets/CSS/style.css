@@ -78,10 +78,6 @@ header {
   cursor: pointer;
 }
 
-
-
-
-
 /* media queries for mobile viewing */
 @media (max-width: 690px) {
   .btn {
